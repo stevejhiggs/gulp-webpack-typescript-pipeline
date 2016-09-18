@@ -13,7 +13,7 @@ module.exports = (options) => {
   const config = {
     resolveLoader: {root: path.join(__dirname, 'node_modules')},
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ['', '.js', '.ts', '.jsx', '.tsx']
     },
     entry: options.entryPoints,
     output: {
