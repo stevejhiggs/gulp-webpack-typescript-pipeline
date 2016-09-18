@@ -1,0 +1,32 @@
+{
+  "name": "gulp-webpack-typescript-pipeline",
+  "version": "1.0.0",
+  "description": "easy transpiling and bundling of typescript back to es5",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevejhiggs/gulp-webpack-typescript-pipeline"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "steve higgs",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.2"
+  }
+}
