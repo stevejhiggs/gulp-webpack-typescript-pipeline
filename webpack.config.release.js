@@ -6,7 +6,6 @@ const commonConfig = require('./webpack.config');
 
 module.exports = (options) => {
   const releaseConfig = Object.create(commonConfig(options));
-  releaseConfig.debug = false;
   releaseConfig.devtool = 'sourcemap';
   releaseConfig.plugins = releaseConfig.plugins.concat(
     new webpack.DefinePlugin({
@@ -17,11 +16,26 @@ module.exports = (options) => {
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true,
+      },
+      output: {
+        comments: false
       }
-    }),
-    new webpack.optimize.OccurenceOrderPlugin(true)
+    })
   );
+  releaseConfig.performance = {
+    maxAssetSize: 250000,
+    maxEntrypointSize: 250000
+  };
 
   return releaseConfig;
 };

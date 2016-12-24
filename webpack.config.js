@@ -5,15 +5,20 @@ const path = require('path');
 module.exports = (options) => {
   const babelConfig =  {
     presets: [
-      [require.resolve('babel-preset-es2015'), { loose: true }],
-      require.resolve('babel-preset-react')
+      [require.resolve('babel-preset-es2015'), { loose: true, modules: false }],
+      require.resolve('babel-preset-react'),
+      require.resolve('babel-preset-stage-3')
     ]
   };
 
   const config = {
-    resolveLoader: {root: path.join(__dirname, 'node_modules')},
+    cache: true,
     resolve: {
-      extensions: ['', '.js', '.ts', '.jsx', '.tsx']
+      modules: [
+        'node_modules',
+        path.join(__dirname, 'node_modules')
+      ],
+      extensions: ['.js', '.ts', '.jsx', '.tsx']
     },
     entry: options.entryPoints,
     output: {
@@ -21,33 +26,32 @@ module.exports = (options) => {
       filename: '[name].js'
     },
     module: {
-      preLoaders: [,
-        {
-          test: /\.(ts|tsx)$/,
-          exclude: /node_modules/,
-          loader: require.resolve('tslint-loader')
-        }
-      ],
       loaders: [
         {
-          test: /\.(ts|tsx)$/,
+          test: /\.ts(x?)$/,
+          exclude: /node_modules/,
+          enforce: 'pre',
+          loader: require.resolve('tslint-loader'),
+          query: {
+            configFile: path.join(__dirname, 'tslint.json'),
+            formatter: 'stylish'
+          }
+        },
+        {
+          test: /\.ts(x?)$/,
+          exclude: /node_modules/,
           loaders:[
             require.resolve('babel-loader') + '?' + JSON.stringify(babelConfig),
             require.resolve('ts-loader'),
           ] 
-        },
-        {
-          test: /\.(js|jsx)$/,
-          loader: require.resolve('babel-loader'),
-          query: babelConfig
         }
       ]
     },
     plugins: [],
     devtool: 'cheap-source-map',
-    debug: true,
-    eslint: {
-      configFile: path.join(__dirname, '.eslintrc')
+    performance: {
+      maxAssetSize: 1500000,
+      maxEntrypointSize: 1500000
     }
   };
 

@@ -9,7 +9,7 @@ Wraps together:
 * tslint
 
 in one simple to use build pipeline. Any js files will also go through the babel -> webpack process, allowing you 
-to easily mix typescript and es6.
+to easily compile down and bundle typescript
 
 ## setting up
 
@@ -20,7 +20,6 @@ to easily mix typescript and es6.
 * add this package `npm install gulp-webpack-typescript-pipeline --save-dev`
 * create a file called `gulpfile.js in your project root`
 * create a `tsconfig.json` in your root folder and put in your project settings
-* optionally create a `tslint.json` in your root folder and put in your lint settings
 * in your gulpfile add the following:
 
 ```
@@ -50,8 +49,8 @@ given a `tsconfig.json` that looks like:
 ```
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
+    "target": "es5",
+    "module": "es6",
     "sourceMap": true
   }
 }
