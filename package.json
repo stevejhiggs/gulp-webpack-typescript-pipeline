@@ -1,6 +1,6 @@
 {
   "name": "gulp-webpack-typescript-pipeline",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "easy transpiling and bundling of typescript back to es5",
   "main": "index.js",
   "engines": {

@@ -8,8 +8,8 @@ Wraps together:
 * gulp
 * tslint
 
-in one simple to use build pipeline. Any js files will also go through the babel -> webpack process, allowing you 
-to easily compile down and bundle typescript
+in one simple to use build pipeline. Your seperate typescript files are downcompiled and bundled together, 
+leaving you a nice simple bundle to use in your browser
 
 ## setting up
 
@@ -18,8 +18,8 @@ to easily compile down and bundle typescript
 * install global gulp `npm install -g gulp`
 * add gulp package `npm install gulp --save-dev`
 * add this package `npm install gulp-webpack-typescript-pipeline --save-dev`
-* create a file called `gulpfile.js in your project root`
-* create a `tsconfig.json` in your root folder and put in your project settings
+* create a file called `gulpfile.js` in your projects root folder
+* create a `tsconfig.json` in your projects root folder and fill in your typescript options
 * in your gulpfile add the following:
 
 ```
@@ -44,7 +44,7 @@ Your bundles will be made in the output directory and called [BUNDLE_NAME].
 
 e.g:
 
-given a `tsconfig.json` that looks like:
+given a `tsconfig.json` in the project root folder that contains:
 
 ```
 {
@@ -55,7 +55,7 @@ given a `tsconfig.json` that looks like:
   }
 }
 ```
-and a gulp file that looks like
+and a gulp file that contains:
 
 ```
 const gulp = require('gulp');
@@ -97,3 +97,8 @@ and then dump out the bundles.
 
 That's cool, feel free to use [gulp-webpack-es6-pipeline](https://github.com/stevejhiggs/gulp-webpack-es6-pipeline)
 to do the same thing for normal es6.
+
+### I don't like the defaults and want to set X
+
+Also fine, feel free to use this as a reference for setting up your own build pipeline.
+This project is really for people who want a fast opinionated setup.
