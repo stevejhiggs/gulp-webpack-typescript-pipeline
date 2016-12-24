@@ -38,7 +38,7 @@ const registerBuildGulpTasks = (gulp, options) => {
     });
   });
 
-  gulp.task('tsPipeline:watch', ['tsPipeline:build:dev'], () => {
+  gulp.task('tsPipeline:watch', [], () => {
     const compiler = getDevCompiler(options);
     compiler.watch({
       aggregateTimeout: 300, // wait so long for more changes
