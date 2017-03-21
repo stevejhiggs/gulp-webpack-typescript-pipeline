@@ -91,6 +91,16 @@ You now have the following commands:
 
 and then dump out the bundles.
 
+## options
+```
+{
+  entryPoints, // required,  an array of bundlename to entrypoint location mappings,
+  outputDir, // required,  where the resulting bundles get written,
+  tsConfigFile, // optional, full path the tsconfig file for the project, otherwise we will just look in the root
+  tsLintFile // optional, full path to your tslint.json file
+}
+```
+
 ## questions
 
 ### but I dont want to use typescript, I want to use normal es6
