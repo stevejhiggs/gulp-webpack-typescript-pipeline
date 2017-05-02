@@ -108,6 +108,13 @@ and then dump out the bundles.
 That's cool, feel free to use [gulp-webpack-es6-pipeline](https://github.com/stevejhiggs/gulp-webpack-es6-pipeline)
 to do the same thing for normal es6.
 
+### using custom linting rules
+
+If you don't like the built in linting rules you can override them in one of two ways:
+
+* put a tslint.json file in the root of your project
+* set the tsLintFile setting in the options (see options above)
+
 ### I don't like the defaults and want to set X
 
 Also fine, feel free to use this as a reference for setting up your own build pipeline.
