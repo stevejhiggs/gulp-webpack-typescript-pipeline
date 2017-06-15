@@ -42,20 +42,10 @@ const findTsconfigFile = (options) => {
 };
 
 module.exports = (options) => {
-  const babelConfig =  {
-    presets: [
-      [require.resolve('babel-preset-es2015'), { loose: true, modules: false }],
-      require.resolve('babel-preset-react'),
-      require.resolve('babel-preset-stage-3')
-    ]
-  };
-
   const lintingOptions = {
     formatter: 'stylish',
     configFile: findTslintFile(options)
   };
-
-
   
   const tsConfigFile = findTsconfigFile(options);
   if (tsConfigFile) {
@@ -88,10 +78,7 @@ module.exports = (options) => {
         {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
-          loaders:[
-            require.resolve('babel-loader') + '?' + JSON.stringify(babelConfig),
-            require.resolve('ts-loader'),
-          ] 
+          loader: require.resolve('ts-loader')
         }
       ]
     },

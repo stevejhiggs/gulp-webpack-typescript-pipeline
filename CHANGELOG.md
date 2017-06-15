@@ -1,3 +1,7 @@
+## 6.0.0
+
+* Remove babel compilation, its not needed and just slows things down
+
 ## 5.0.0
 
 * Can now set a custom tslint and tsconfig location
