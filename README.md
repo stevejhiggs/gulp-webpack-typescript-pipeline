@@ -97,7 +97,8 @@ and then dump out the bundles.
   entryPoints, // required,  an array of bundlename to entrypoint location mappings,
   outputDir, // required,  where the resulting bundles get written,
   tsConfigFile, // optional, full path the tsconfig file for the project, otherwise we will just look in the root
-  tsLintFile // optional, full path to your tslint.json file
+  tsLintFile, // optional, full path to your tslint.json file
+  isNodeLibrary // if set to true will output code suitable to be consumed by node rather than the browser
 }
 ```
 

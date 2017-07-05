@@ -1,3 +1,11 @@
+## 7.1.0
+
+* add option to output a node library
+
+## 7.0.0 
+
+* upgrade webpack to v3
+
 ## 6.0.0
 
 * Remove babel compilation, its not needed and just slows things down

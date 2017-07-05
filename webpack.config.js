@@ -90,5 +90,9 @@ module.exports = (options) => {
     }
   };
 
+  if (options.isNodeLibrary) {
+    config.output.libraryTarget = "commonjs2"
+  }
+
   return config;
 };
