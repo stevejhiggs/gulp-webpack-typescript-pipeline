@@ -94,5 +94,11 @@ module.exports = (options) => {
     config.output.libraryTarget = "commonjs2"
   }
 
+  if (options.externals) {
+    config.output.externals = options.externals;
+  }
+
+  if (Array.isArray(options.externalPackages))
+
   return config;
 };

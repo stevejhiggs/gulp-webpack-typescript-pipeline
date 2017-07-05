@@ -1,3 +1,7 @@
+## 7.2.0
+
+* allow setting externals
+
 ## 7.1.0
 
 * add option to output a node library
