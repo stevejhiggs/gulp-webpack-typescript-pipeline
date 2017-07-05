@@ -95,10 +95,8 @@ module.exports = (options) => {
   }
 
   if (options.externals) {
-    config.output.externals = options.externals;
+    config.externals = options.externals;
   }
-
-  if (Array.isArray(options.externalPackages))
 
   return config;
 };
