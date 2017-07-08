@@ -91,7 +91,11 @@ module.exports = (options) => {
   };
 
   if (options.isNodeLibrary) {
-    config.output.libraryTarget = "commonjs2"
+    config.output.libraryTarget = 'commonjs2';
+    config.target = 'node';
+    config.plugins.push(new webpack.DefinePlugin({
+      'process.env': 'process.env'
+    }));
   }
 
   if (options.externals) {
