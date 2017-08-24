@@ -65,7 +65,7 @@ tsPipeline.registerBuildGulpTasks(
   gulp,
   {
     entryPoints: {
-      'myNiceBundle': __dirname + '/scripts/myentrypoint.js'
+      'myNiceBundle': __dirname + '/scripts/myentrypoint.ts'
     },
     outputDir: __dirname + '/bundles'
   }
