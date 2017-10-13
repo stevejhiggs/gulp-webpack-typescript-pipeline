@@ -1,3 +1,7 @@
+## 8.0.0
+
+* when building a node module we no longer bundle the node_modules directory
+
 ## 7.2.0
 
 * allow setting externals
