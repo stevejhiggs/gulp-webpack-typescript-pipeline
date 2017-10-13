@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 const path = require('path');
 const commonConfig = require('./webpack.config');
@@ -13,7 +11,15 @@ module.exports = (options) => {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()
+  );
+
+  if (!options.isNodeLibrary) {
+    releaseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
         screw_ie8: true,
@@ -29,13 +35,8 @@ module.exports = (options) => {
       output: {
         comments: false
       }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin()
-  );
+    }));
+  }
 
   return releaseConfig;
 };

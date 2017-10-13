@@ -1,8 +1,7 @@
-'use strict';
-
 const webpack = require('webpack');
 const path = require('path');
-var fs = require('fs');
+const fs = require('fs');
+const nodeExternals = require('webpack-node-externals');
 
 const findTslintFile = (options) => {
   if (options.tslintFile) {
@@ -63,6 +62,7 @@ module.exports = (options) => {
       extensions: ['.js', '.ts', '.jsx', '.tsx']
     },
     entry: options.entryPoints,
+    externals:[],
     output: {
       path: path.join(options.outputDir),
       filename: '[name].js'
@@ -99,8 +99,12 @@ module.exports = (options) => {
     }));
   }
 
+  if (options.isNodeLibrary) {
+    config.externals.push(nodeExternals());
+  }
+
   if (options.externals) {
-    config.externals = options.externals;
+    config.externals = config.externals.concat(options.externals);
   }
 
   return config;
