@@ -1,3 +1,7 @@
+## 9.0.0
+
+* upgrade to typescript 2.6.2 as well as other deps. As we have some new rules in the default linting set we still regard this as a breaking change
+
 ## 8.0.0
 
 * when building a node module we no longer bundle the node_modules directory

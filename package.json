@@ -1,6 +1,6 @@
 {
   "name": "gulp-webpack-typescript-pipeline",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "easy transpiling and bundling of typescript back to es5",
   "main": "index.js",
   "engines": {
@@ -18,11 +18,11 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
-    "ts-loader": "^2.3.7",
-    "tslint": "^5.7.0",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
     "tslint-loader": "^3.5.3",
-    "typescript": "^2.5.3",
-    "webpack": "^3.7.1",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
     "webpack-node-externals": "^1.6.0"
   }
 }
