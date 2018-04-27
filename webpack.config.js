@@ -69,7 +69,7 @@ module.exports = (options) => {
       filename: '[name].js'
     },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,

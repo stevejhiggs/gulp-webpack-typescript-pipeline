@@ -50,7 +50,7 @@ given a `tsconfig.json` in the project root folder that contains:
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "es6",
+    "module": "commonjs",
     "sourceMap": true
   }
 }

@@ -3,7 +3,7 @@ const path = require('path');
 const commonConfig = require('./webpack.config');
 
 module.exports = (options) => {
-  const releaseConfig = Object.create(commonConfig(options));
+  const releaseConfig = Object.assign({}, commonConfig(options));
   releaseConfig.devtool = 'sourcemap';
   releaseConfig.mode = 'production';
 
