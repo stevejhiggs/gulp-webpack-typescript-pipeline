@@ -54,6 +54,7 @@ module.exports = (options) => {
 
   const config = {
     cache: true,
+    mode: 'development',
     resolve: {
       modules: [
         'node_modules',

@@ -5,37 +5,13 @@ const commonConfig = require('./webpack.config');
 module.exports = (options) => {
   const releaseConfig = Object.create(commonConfig(options));
   releaseConfig.devtool = 'sourcemap';
-  releaseConfig.plugins = releaseConfig.plugins.concat(
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin()
-  );
+  releaseConfig.mode = 'production';
 
-  if (!options.isNodeLibrary) {
-    releaseConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-      },
-      output: {
-        comments: false
-      }
-    }));
+  if (options.isNodeLibrary) {
+    // dont want to minimise library code
+    releaseConfig.optimization = {
+      minimize: false
+    }
   }
 
   return releaseConfig;
