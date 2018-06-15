@@ -1,3 +1,9 @@
+## 11.0.0
+
+* upgrade to typescript 2.9.2
+* gulp is now a peer dependancy rather
+* remove use of gulp-util as it is deprecated
+
 ## 10.0.0
 
 * upgrade to typescript 2.8.3 and webpack 4

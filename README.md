@@ -4,7 +4,6 @@ Wraps together:
 
 * webpack
 * typescript
-* babel
 * gulp
 * tslint
 
@@ -13,7 +12,7 @@ leaving you a nice simple bundle to use in your browser
 
 ## setting up
 
-* install node > v4 + npm (note: node v6 is preferred)
+* install node > v4 + npm (note: node v8 is preferred)
 * npm init your project in a folder `npm init`
 * install global gulp `npm install -g gulp`
 * add gulp package `npm install gulp --save-dev`
@@ -86,7 +85,6 @@ You now have the following commands:
 
 * linting (tslint)
 * typescript (ts -> es6)
-* babel (es6 -> es5)
 * webpack (bundling)
 
 and then dump out the bundles.

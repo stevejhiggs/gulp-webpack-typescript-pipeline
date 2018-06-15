@@ -1,11 +1,8 @@
 {
   "name": "gulp-webpack-typescript-pipeline",
-  "version": "10.0.3",
+  "version": "11.0.0",
   "description": "easy transpiling and bundling of typescript back to es5",
   "main": "index.js",
-  "engines": {
-    "node": ">=6.3.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stevejhiggs/gulp-webpack-typescript-pipeline"
@@ -16,13 +13,13 @@
   "author": "steve higgs",
   "license": "MIT",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.8",
-    "ts-loader": "^4.2.0",
-    "tslint": "^5.9.1",
+    "ts-loader": "^4.4.1",
     "tslint-loader": "^3.6.0",
-    "typescript": "^2.8.3",
-    "webpack": "^4.6.0",
+    "typescript": "^2.9.2",
+    "webpack": "^4.12.0",
     "webpack-node-externals": "^1.7.2"
+  },
+  "peerDependencies": {
+    "gulp": "^3.9.1"
   }
 }
