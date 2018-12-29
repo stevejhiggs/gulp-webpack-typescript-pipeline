@@ -49,7 +49,7 @@ given a `tsconfig.json` in the project root folder that contains:
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "esnext",
     "sourceMap": true
   }
 }

@@ -1,3 +1,15 @@
+## 14.0.0
+
+* Gulp 4 compatibility
+
+## 13.0.0
+
+* dependancy upgrade
+
+## 12.0.0
+
+* upgrade to typescript 3
+
 ## 11.0.0
 
 * upgrade to typescript 2.9.2

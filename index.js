@@ -1,10 +1,11 @@
 const log = require('fancy-log');
 const webpack = require('webpack');
+const PluginError = require('plugin-error');
 const config = require('./webpack.config');
 const releaseConfig = require('./webpack.config.release');
 
 const handleWebpackOutput = (err, stats) => {
-  if (err) throw new gutil.PluginError('tsPipeline', err);
+  if (err) throw new PluginError('tsPipeline', err);
   log('[tsPipeline]', stats.toString({
     colors: true,
     chunks: false
@@ -36,7 +37,7 @@ const registerBuildGulpTasks = (gulp, options) => {
     });
   });
 
-  gulp.task('tsPipeline:watch', [], () => {
+  gulp.task('tsPipeline:watch', () => {
     const compiler = getDevCompiler(options);
     compiler.watch({
       aggregateTimeout: 300, // wait so long for more changes
