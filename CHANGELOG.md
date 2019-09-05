@@ -1,3 +1,7 @@
+## 15.0.0
+
+* Upgrade to webpack 4.39.3 and typescript 3.6
+
 ## 14.0.0
 
 * Gulp 4 compatibility
