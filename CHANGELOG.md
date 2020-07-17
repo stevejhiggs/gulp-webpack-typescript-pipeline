@@ -1,3 +1,8 @@
+## 16.0.0
+
+* Upgrade typescript to 3.9.7
+* replace tslint with eslint configured for typescript
+
 ## 15.0.0
 
 * Upgrade to webpack 4.39.3 and typescript 3.6
