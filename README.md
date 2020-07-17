@@ -5,7 +5,7 @@ Wraps together:
 * webpack
 * typescript
 * gulp
-* tslint
+* eslint for typescript
 
 in one simple to use build pipeline. Your seperate typescript files are downcompiled and bundled together, 
 leaving you a nice simple bundle to use in your browser
@@ -94,8 +94,7 @@ and then dump out the bundles.
 {
   entryPoints, // required,  an array of bundlename to entrypoint location mappings,
   outputDir, // required,  where the resulting bundles get written,
-  tsConfigFile, // optional, full path the tsconfig file for the project, otherwise we will just look in the root
-  tsLintFile, // optional, full path to your tslint.json file
+  esLintFile, // optional, full path to your .eslintrc.js file
   isNodeLibrary // if set to true will output code suitable to be consumed by node rather than the browser
   externals, the packages to not include in the compiled output
 }
@@ -112,8 +111,8 @@ to do the same thing for normal es6.
 
 If you don't like the built in linting rules you can override them in one of two ways:
 
-* put a tslint.json file in the root of your project
-* set the tsLintFile setting in the options (see options above)
+* put a .eslintrc.js file in the root of your project
+* set the esLintFile setting in the options (see options above)
 
 ### I don't like the defaults and want to set X
 

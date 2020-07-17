@@ -3,55 +3,27 @@ const path = require('path');
 const fs = require('fs');
 const nodeExternals = require('webpack-node-externals');
 
-const findTslintFile = (options) => {
-  if (options.tslintFile) {
-    if (fs.existsSync(options.tslintFile)) {
-      console.log(`using custom tslint file at ${options.tslintFile}`);
-      return options.tslintFile;
+const findEslintFile = (options) => {
+  if (options.eslintFile) {
+    if (fs.existsSync(options.eslintFile)) {
+      console.log(`using custom eslint file at ${options.eslintFile}`);
+      return options.eslintFile;
     } 
       
-    console.warn(`custom tslint file not found at ${options.tslintFile}`);
+    console.warn(`custom tslint file not found at ${options.eslintFile}`);
   }
 
-  const rootTslint = path.resolve('./tslint.json');
-  if (fs.existsSync(rootTslint)) {
-    console.log(`using custom tslint file at ${rootTslint}`);
-    return rootTslint;
+  const rootEslint = path.resolve('./.eslintrc.js');
+  if (fs.existsSync(rootEslint)) {
+    console.log(`using custom eslint file at ${rootEslint}`);
+    return rootEslint;
   }
   
   // default internal file
-  return path.join(__dirname, 'tslint.json');
-};
-
-const findTsconfigFile = (options) => {
-  if (options.tsConfigFile) {
-    if (fs.existsSync(options.tsConfigFile)) {
-      console.log(`using tsconfig file at ${options.tsConfigFile}`);
-      return options.tsConfigFile;
-    }
-
-    console.warn(`tsconfig file not found at ${options.tsConfigFile}`);
-  }
-
-  // check for config at the same level as root
-  const rootEntryPoint = path.resolve('./tsconfig.json');
-  if (fs.existsSync(rootEntryPoint)) {
-    console.log(`using tsconfig file at ${rootEntryPoint}`);
-    return rootEntryPoint;
-  }
+  return path.join(__dirname, '.eslintrc.js');
 };
 
 module.exports = (options) => {
-  const lintingOptions = {
-    formatter: 'stylish',
-    configFile: findTslintFile(options)
-  };
-  
-  const tsConfigFile = findTsconfigFile(options);
-  if (tsConfigFile) {
-    lintingOptions.tsConfigFile = tsConfigFile;
-  }
-
   const config = {
     cache: true,
     mode: 'development',
@@ -74,8 +46,10 @@ module.exports = (options) => {
           test: /\.ts(x?)$/,
           exclude: /node_modules/,
           enforce: 'pre',
-          loader: require.resolve('tslint-loader'),
-          query: lintingOptions
+          loader: require.resolve('eslint-loader'),
+          query: {
+            configFile: findEslintFile(options)
+          }
         },
         {
           test: /\.ts(x?)$/,
