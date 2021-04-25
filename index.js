@@ -6,10 +6,13 @@ const releaseConfig = require('./webpack.config.release');
 
 const handleWebpackOutput = (err, stats) => {
   if (err) throw new PluginError('tsPipeline', err);
-  log('[tsPipeline]', stats.toString({
-    colors: true,
-    chunks: false
-  }));
+  log(
+    '[tsPipeline]',
+    stats.toString({
+      colors: true,
+      chunks: false
+    })
+  );
 };
 
 const getDevCompiler = (options) => {
@@ -39,12 +42,15 @@ const registerBuildGulpTasks = (gulp, options) => {
 
   gulp.task('tsPipeline:watch', () => {
     const compiler = getDevCompiler(options);
-    compiler.watch({
-      aggregateTimeout: 300, // wait so long for more changes
-      poll: 2000 // windows needs polling to pick up changes :(
-    }, (err, stats) => {
-      handleWebpackOutput(err, stats);
-    });
+    compiler.watch(
+      {
+        aggregateTimeout: 300, // wait so long for more changes
+        poll: 2000 // windows needs polling to pick up changes :(
+      },
+      (err, stats) => {
+        handleWebpackOutput(err, stats);
+      }
+    );
   });
 };
 

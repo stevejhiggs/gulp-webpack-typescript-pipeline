@@ -8,8 +8,8 @@ const findEslintFile = (options) => {
     if (fs.existsSync(options.eslintFile)) {
       console.log(`using custom eslint file at ${options.eslintFile}`);
       return options.eslintFile;
-    } 
-      
+    }
+
     console.warn(`custom tslint file not found at ${options.eslintFile}`);
   }
 
@@ -18,7 +18,7 @@ const findEslintFile = (options) => {
     console.log(`using custom eslint file at ${rootEslint}`);
     return rootEslint;
   }
-  
+
   // default internal file
   return path.join(__dirname, '.eslintrc.js');
 };
@@ -28,14 +28,11 @@ module.exports = (options) => {
     cache: true,
     mode: 'development',
     resolve: {
-      modules: [
-        'node_modules',
-        path.join(__dirname, 'node_modules')
-      ],
+      modules: ['node_modules', path.join(__dirname, 'node_modules')],
       extensions: ['.js', '.ts', '.jsx', '.tsx']
     },
     entry: options.entryPoints,
-    externals:[],
+    externals: [],
     output: {
       path: path.join(options.outputDir),
       filename: '[name].js'
@@ -47,7 +44,7 @@ module.exports = (options) => {
           exclude: /node_modules/,
           enforce: 'pre',
           loader: require.resolve('eslint-loader'),
-          query: {
+          options: {
             configFile: findEslintFile(options)
           }
         },
@@ -69,9 +66,11 @@ module.exports = (options) => {
   if (options.isNodeLibrary) {
     config.output.libraryTarget = 'commonjs2';
     config.target = 'node';
-    config.plugins.push(new webpack.DefinePlugin({
-      'process.env': 'process.env'
-    }));
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'process.env': 'process.env'
+      })
+    );
   }
 
   if (options.isNodeLibrary) {

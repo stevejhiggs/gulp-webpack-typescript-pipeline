@@ -2,24 +2,24 @@
 
 Wraps together:
 
-* webpack
-* typescript
-* gulp
-* eslint for typescript
+- webpack
+- typescript
+- gulp
+- eslint for typescript
 
-in one simple to use build pipeline. Your seperate typescript files are downcompiled and bundled together, 
+in one simple to use build pipeline. Your seperate typescript files are downcompiled and bundled together,
 leaving you a nice simple bundle to use in your browser
 
 ## setting up
 
-* install node > v4 + npm (note: node v8 is preferred)
-* npm init your project in a folder `npm init`
-* install global gulp `npm install -g gulp`
-* add gulp package `npm install gulp --save-dev`
-* add this package `npm install gulp-webpack-typescript-pipeline --save-dev`
-* create a file called `gulpfile.js` in your projects root folder
-* create a `tsconfig.json` in your projects root folder and fill in your typescript options
-* in your gulpfile add the following:
+- install node > v4 + npm (note: node v8 is preferred)
+- npm init your project in a folder `npm init`
+- install global gulp `npm install -g gulp`
+- add gulp package `npm install gulp --save-dev`
+- add this package `npm install gulp-webpack-typescript-pipeline --save-dev`
+- create a file called `gulpfile.js` in your projects root folder
+- create a `tsconfig.json` in your projects root folder and fill in your typescript options
+- in your gulpfile add the following:
 
 ```
 const gulp = require('gulp');
@@ -54,6 +54,7 @@ given a `tsconfig.json` in the project root folder that contains:
   }
 }
 ```
+
 and a gulp file that contains:
 
 ```
@@ -77,19 +78,20 @@ Then running `gulp tsPipeline:build:dev` Will result in a bundle called `myNiceB
 
 You now have the following commands:
 
-* `gulp tsPipeline:build:dev` - build all the files in dev mode
-* `gulp tsPipeline:build:release` - build all the files in minified release mode
-* `gulp tsPipeline:watch` - rebuilds whenever a file is changed
+- `gulp tsPipeline:build:dev` - build all the files in dev mode
+- `gulp tsPipeline:build:release` - build all the files in minified release mode
+- `gulp tsPipeline:watch` - rebuilds whenever a file is changed
 
 ## features
 
-* linting (tslint)
-* typescript (ts -> es6)
-* webpack (bundling)
+- linting (tslint)
+- typescript (ts -> es6)
+- webpack (bundling)
 
 and then dump out the bundles.
 
 ## options
+
 ```
 {
   entryPoints, // required,  an array of bundlename to entrypoint location mappings,
@@ -111,8 +113,8 @@ to do the same thing for normal es6.
 
 If you don't like the built in linting rules you can override them in one of two ways:
 
-* put a .eslintrc.js file in the root of your project
-* set the esLintFile setting in the options (see options above)
+- put a .eslintrc.js file in the root of your project
+- set the esLintFile setting in the options (see options above)
 
 ### I don't like the defaults and want to set X
 

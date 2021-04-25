@@ -1,60 +1,65 @@
+## 17.0.0
+
+- Upgrade typescript to 4.2.4
+- Upgrade webpack to 5.35.1
+
 ## 16.0.0
 
-* Upgrade typescript to 3.9.7
-* replace tslint with eslint configured for typescript
+- Upgrade typescript to 3.9.7
+- replace tslint with eslint configured for typescript
 
 ## 15.0.0
 
-* Upgrade to webpack 4.39.3 and typescript 3.6
+- Upgrade to webpack 4.39.3 and typescript 3.6
 
 ## 14.0.0
 
-* Gulp 4 compatibility
+- Gulp 4 compatibility
 
 ## 13.0.0
 
-* dependancy upgrade
+- dependancy upgrade
 
 ## 12.0.0
 
-* upgrade to typescript 3
+- upgrade to typescript 3
 
 ## 11.0.0
 
-* upgrade to typescript 2.9.2
-* gulp is now a peer dependancy rather
-* remove use of gulp-util as it is deprecated
+- upgrade to typescript 2.9.2
+- gulp is now a peer dependancy rather
+- remove use of gulp-util as it is deprecated
 
 ## 10.0.0
 
-* upgrade to typescript 2.8.3 and webpack 4
+- upgrade to typescript 2.8.3 and webpack 4
 
 ## 9.0.0
 
-* upgrade to typescript 2.6.2 as well as other deps. As we have some new rules in the default linting set we still regard this as a breaking change
+- upgrade to typescript 2.6.2 as well as other deps. As we have some new rules in the default linting set we still regard this as a breaking change
 
 ## 8.0.0
 
-* when building a node module we no longer bundle the node_modules directory
+- when building a node module we no longer bundle the node_modules directory
 
 ## 7.2.0
 
-* allow setting externals
+- allow setting externals
 
 ## 7.1.0
 
-* add option to output a node library
+- add option to output a node library
 
-## 7.0.0 
+## 7.0.0
 
-* upgrade webpack to v3
+- upgrade webpack to v3
 
 ## 6.0.0
 
-* Remove babel compilation, its not needed and just slows things down
+- Remove babel compilation, its not needed and just slows things down
 
 ## 5.0.0
 
-* Can now set a custom tslint and tsconfig location
-* tsconfig now passed to linter to enable advanced checking rules
-* minimum version of node now 6.3.0
+- Can now set a custom tslint and tsconfig location
+- tsconfig now passed to linter to enable advanced checking rules
+- minimum version of node now 6.3.0
