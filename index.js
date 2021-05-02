@@ -28,6 +28,9 @@ const registerBuildGulpTasks = (gulp, options) => {
     const compiler = getDevCompiler(options);
     compiler.run((err, stats) => {
       handleWebpackOutput(err, stats);
+      if (stats && stats.hasErrors()) {
+        return done(new Error('typescript compilation failed'));
+      }
       done();
     });
   });
@@ -36,6 +39,9 @@ const registerBuildGulpTasks = (gulp, options) => {
     const compiler = getReleaseCompiler(options);
     compiler.run((err, stats) => {
       handleWebpackOutput(err, stats);
+      if (stats && stats.hasErrors()) {
+        return done(new Error('typescript compilation failed'));
+      }
       done();
     });
   });
