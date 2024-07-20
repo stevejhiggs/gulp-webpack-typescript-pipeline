@@ -1,9 +1,5 @@
 # Easy transpiling of typescript back to browser friendly es5
 
-## This library is no longer supported
-
-If you want to solve this problem using modern tooling I'd highly recommend (vite)[https://vitejs.dev/]. 
-
 Wraps together:
 
 - webpack
@@ -13,6 +9,10 @@ Wraps together:
 
 in one simple to use build pipeline. Your seperate typescript files are downcompiled and bundled together,
 leaving you a nice simple bundle to use in your browser
+
+## This library is no longer supported
+
+If you want to solve this problem using modern tooling I'd highly recommend [vite](https://vitejs.dev/). 
 
 ## setting up
 
