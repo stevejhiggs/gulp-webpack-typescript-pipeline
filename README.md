@@ -1,5 +1,9 @@
 # Easy transpiling of typescript back to browser friendly es5
 
+## This library is no longer supported
+
+If you want to solve this problem using modern tooling I'd highly recommend (vite)[https://vitejs.dev/]. 
+
 Wraps together:
 
 - webpack
